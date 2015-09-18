@@ -19,13 +19,12 @@ ActiveRecord::Schema.define(version: 20150917180542) do
   create_table "entries", force: :cascade do |t|
     t.string   "description"
     t.string   "photo"
-    t.string   "webhome"
     t.string   "url"
     t.string   "user"
     t.string   "category"
-    t.integer  "vote"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "vote",        default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end

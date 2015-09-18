@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'entries#home'
 
-  get 'entries/new' => 'entries#new', as: :post_new
-  post 'entries/create' => 'entries#create'
+  get 'entries/:id' => 'entries#detail', as: :entry
+  get 'entries/new' => 'entries#new', as: :new_entries
+  post 'entries' => 'entries#create', as: :entries
 
   get 'entries/url'
 

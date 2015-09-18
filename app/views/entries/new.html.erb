@@ -1,2 +1,32 @@
-<h1>Entries#new</h1>
-<p>Find me in app/views/entries/new.html.erb</p>
+<%= form_for @entry do |f| %>
+
+  <div>
+    <%= f.label :description%>
+    <%= f.text_field :description%><em><%= @entry.errors[:description].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label "Link to webpage"%>
+    <%= f.text_field :webhome%><em><%= @entry.errors[:webhome].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label "Image url"%>
+    <%= f.text_field :photo%><em><%= @entry.errors[:photo].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label :user%>
+    <%= f.text_field :user%><em><%= @entry.errors[:user].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label :category%>
+    <%= f.text_field :category%><em><%= @entry.errors[:category].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

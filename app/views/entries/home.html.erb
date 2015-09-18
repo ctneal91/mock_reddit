@@ -1,20 +1,18 @@
-<html>
-  <head>
-  </head>
-
-  <body>
-    <ul>
-      <% @entries.each do |entry| %>
-        <li>
-          <a href=<%=entry.webhome %>><%= entry.description %></a>
-        </li>
-        <li>
-          <img src=<%=entry.photo %> </li>
-        <li><%= entry.webhome %></li>
-        <li><%= entry.user %></li>
-        <li><%= entry.category %></li>
-        <li><%= entry.vote %></li>
-      <% end %>
-    </ul>
-  </body>
-</html>
+<div class="submit">
+  <%= link_to new_entries_path do %>
+    Add New Post
+  <% end %>
+</div>
+<ul>
+  <% @entries.each do |entry| %>
+    <li> <%= link_to entry_path(id: entry.id) do %>
+        <%= entry.description %>
+        <% end %>
+    </li>
+    <li>
+      <img src=<%=entry.photo %> </li>
+    <li><%= entry.user %></li>
+    <li><%= entry.category %></li>
+    <li><%= entry.vote %></li>
+  <% end %>
+</ul>
