@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   def home
+    @entries = Entry.all
   end
 
   def new

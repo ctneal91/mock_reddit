@@ -3,6 +3,7 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
       t.string :description
       t.string :photo
+      t.string :url
       t.string :webhome
       t.string :user
       t.string :category

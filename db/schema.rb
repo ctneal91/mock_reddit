@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150917180542) do
     t.string   "description"
     t.string   "photo"
     t.string   "webhome"
+    t.string   "url"
     t.string   "user"
     t.string   "category"
     t.integer  "vote"
