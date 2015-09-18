@@ -8,6 +8,19 @@
 </head>
 <body>
 
+<nav>
+  <div class="home">
+    <%= link_to root_path do %>
+      Home
+    <% end %>
+  </div>
+  <div class="submit">
+    <%= link_to new_entries_path do %>
+      Submit Post
+    <% end %>
+  </div>
+</nav>
+
 <%= yield %>
 
 </body>
