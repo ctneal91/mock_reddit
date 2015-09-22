@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root 'entries#home'
 
-  get 'entries/:id' => 'entries#detail', as: :entry
-  get 'entries/new' => 'entries#new', as: :new_entries
-  post 'entries' => 'entries#create', as: :entries
+  get 'entry/:id' => 'entries#detail', as: :entry
 
+  get 'entry' => 'entries#new', as: :new
+  post 'entries' => 'entries#create', as: :entries
+  post 'entries/:id/vote' => 'entries#vote', as: :vote
   get 'entries/url'
 
   get 'entries/vote'

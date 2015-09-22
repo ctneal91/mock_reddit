@@ -12,5 +12,6 @@ lost.photo = "http://static1.businessinsider.com/image/4fb2a3aaeab8ea0d3500000c/
 lost.url = "https://www.youtube.com/watch?v=mRT6fVFsxL4"
 lost.user = "John_Doe"
 lost.category = "Parenting"
+lost.vote = 2;
 
 lost.save

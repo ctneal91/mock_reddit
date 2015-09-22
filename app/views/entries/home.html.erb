@@ -1,13 +1,31 @@
 <ul>
   <% @entries.each do |entry| %>
-    <li> <%= link_to entry_path(id: entry.id) do %>
-        <%= entry.description %>
-        <% end %>
-    </li>
     <li>
-      <img src=<%=entry.photo %> </li>
-    <li><%= entry.user %></li>
-    <li><%= entry.category %></li>
-    <li><%= entry.vote %></li>
+      <div class="container">
+        <div class="votes">
+          <%= link_to vote_path(id: entry.id), method: :post do %>
+           <%= pluralize entry.vote, 'vote' %>
+          <% end %>
+        </div>
+        <img src=<%=entry.photo %>>
+        <div class="description">
+          <%= link_to entry_path(id: entry.id) do %>
+            <%= entry.description %>
+          <% end %>
+        </div>
+      </div>
+      <div class="container-2">
+        <div class="user">User:
+          <div class="user-name">
+            <%= entry.user %>
+          </div>
+        </div>
+        <div class="category">Category:
+          <div class="category-name">
+            <%= entry.category %>
+          </div>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>

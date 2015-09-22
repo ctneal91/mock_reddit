@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def home
-    @entries = Entry.all
+    @entries = Entry.all.order("vote desc")
   end
 
   def detail
@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new params.require(:entry).permit(:description, :photo, :webhome, :user, :votes, :category)
+    @entry = Entry.new params.require(:entry).permit(:description, :photo, :url, :user, :category)
     if @entry.save
       redirect_to root_path
     else
@@ -24,5 +24,8 @@ class EntriesController < ApplicationController
   end
 
   def vote
+    @entry= Entry.find params[:id]
+    @entry.update vote: (@entry.vote + 1)
+    redirect_to root_path
   end
 end
