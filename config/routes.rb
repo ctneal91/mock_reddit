@@ -3,12 +3,10 @@ Rails.application.routes.draw do
 
   get 'entry/:id' => 'entries#detail', as: :entry
 
-  get 'entry' => 'entries#new', as: :new
+  get 'entry' => 'entries#new', as: :new_entry
   post 'entries' => 'entries#create', as: :entries
   post 'entries/:id/vote' => 'entries#vote', as: :vote
   get 'entries/url'
-
-  get 'entries/vote'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
