@@ -1,6 +1,6 @@
 <ul>
   <% @entries.each do |entry| %>
-    <li>
+    <li class="entry">
       <div class="container">
         <div class="votes">
           <%= link_to vote_path(id: entry.id), method: :post do %>
@@ -8,24 +8,25 @@
           <% end %>
         </div>
         <img src=<%=entry.photo %>>
-        <div class="description">
-          <%= link_to entry_path(id: entry.id) do %>
-            <%= entry.description %>
-          <% end %>
-        </div>
-      </div>
-      <div class="container-2">
-        <div class="user">User:
-          <div class="user-name">
-            <%= entry.user %>
+        <div class="container-2">
+          <div class="description">
+            <%= link_to entry_path(id: entry.id) do %>
+              <%= entry.description %>
+            <% end %>
+          </div>
+          <div class="container-3">
+            <div class="user">User:
+              <div class="user-name">
+                <%= entry.user %>
+              </div>
+            </div>
+            <div class="category">Category:
+              <div class="category-name">
+                <%= entry.category %>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="category">Category:
-          <div class="category-name">
-            <%= entry.category %>
-          </div>
-        </div>
-      </div>
     </li>
   <% end %>
 </ul>

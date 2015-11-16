@@ -3,17 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img {
-  width: 40px;
-  height: 40px;
-  padding: 0 20px;
+  width: 50px;
+  height: 50px;
+  padding: 0px 20px;
 }
 
 .description {
   display: flex;
 }
 
-.container, .container-2, .user, .category {
+.container, .container-3, .user, .category {
   display: flex;
+  height: 50px;
+}
+
+.votes {
+  width: 80px;
 }
 
 .user, .category{
@@ -22,12 +27,17 @@ img {
   padding-right: 20px;
 }
 
-.container-2 {
+.container-3 {
   padding-bottom: 10px;
   display: flex;
+  padding-top: 10px;
 }
 
 .user-name, .category-name {
   font-color: gray;
   padding-left: 5px;
+}
+
+.entry:nth-of-type(odd) {
+    background: #e0e0e0;
 }
